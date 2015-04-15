@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANT_CONFIGURATION_VERSION = 2
+
+Vagrant.configure(VAGRANT_CONFIGURATION_VERSION) do |config|
+  config.vm.box = "hnakamur/freebsd-9.3-amd64"
+
+  # Use NFS as a shared folder
+  config.vm.synced_folder ".", "/vagrant", nfs: true
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # NOTE: NFS requires a host-only network to be created.
+  config.vm.network "private_network", ip: "192.168.33.13"
+
+  config.vm.provider "virtualbox" do |vb|
+    # # Display the VirtualBox GUI when booting the machine
+    # vb.gui = true
+  
+    # Customize the amount of memory on the VM:
+    vb.memory = "1024"
+  end
+end
