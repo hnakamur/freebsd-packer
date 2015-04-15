@@ -1,41 +1,51 @@
-# FreeBSD 10.0 with Packer
+# Packer templates for FreeBSD
 
-## install with vagrantcloud
+## FreeBSD versions
 
-```sh
-vagrant init hfm4/freebsd-10.0
-vagrant up
-```
+* 10.1
+* 9.3
 
 ## build
 
 ### amd64 (x86\_64,x64x)
 
 ```sh
-packer build packer/FreeBSD-10.0-RELEASE-amd64.json
+packer build packer/FreeBSD-10.1-RELEASE-amd64.json
 ```
 
 ### i386
 
 ```sh
-packer build packer/FreeBSD-10.0-RELEASE-i386.json
+packer build packer/FreeBSD-10.1-RELEASE-i386.json
 ```
 
-## directories and files
+## add vagrant box
 
+### amd64 (x86\_64,x64x)
+
+```sh
+vagrant box add hnakamur/freebsd-10.1-amd64 builds/freebsd-10.1-amd64.box
 ```
-./
-├── README.md
-├── Vagrantfile
-├── builds
-├── http
-│   │── install.sh
-│   └── install_i386.sh
-├── packer
-│   │── FreeBSD-10.0-RELEASE-amd64.json
-│   └── FreeBSD-10.0-RELEASE-i386.json
-└── scripts
-    ├── vagrant.sh
-    ├── virtualbox.sh
-    └── cleanup.sh
+
+### i386
+
+```sh
+vagrant box add hnakamur/freebsd-10.1-i386 builds/freebsd-10.1-i386.box
+```
+
+
+## start vagrant VM
+
+### amd64 (x86\_64,x64x)
+
+```sh
+cd vagrant/10.1-amd64
+vagrant up
+```
+
+### i386
+
+```sh
+cd vagrant/10.1-i386
+vagrant up
 ```
