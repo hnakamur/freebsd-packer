@@ -57,7 +57,11 @@
         "<wait><enter>", // no customization for system console settings
         "<wait><tab><enter>", // skip time zone setting
         "<wait><enter>", // no PS/2 mouse
-        "<wait><tab><enter>", // skip browsing the package collection
+        "<wait><enter>", // browse the package collection
+        "<wait><end><pageUp><down><down><down><down><down><down> ", // enter security
+        "<wait><end> <tab><enter>", // select sudo
+        "<wait><tab><enter>", // click install
+        "<wait><enter>", // install sudo
         "<wait><enter>", // yes to add initial user accounts
         "<wait>u<enter>vagrant<tab><tab>20<tab>vagrant<tab><tab>wheel<tab><tab><tab><enter>", // add vagrant user
         "<wait>x<enter>", // exit user and group management menu

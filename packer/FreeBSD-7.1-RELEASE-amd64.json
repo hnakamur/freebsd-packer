@@ -2,8 +2,8 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/ISO-IMAGES/7.1/7.1-RELEASE-amd64-disc1.iso",
-      "iso_checksum": "ac88bfa3359aea242450d74c20347bde",
+      "iso_url": "7.1-RELEASE-amd64-dvd1.iso",
+      "iso_checksum": "df1a3604d4f99b7cf3511d42d33c550a",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -42,7 +42,7 @@
         "<wait>x<enter>",
         "<wait><enter>",
         "<enter>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><enter>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><enter>",
         "<wait><enter>",
         "<wait><enter>",
         "<wait><enter>",
@@ -57,7 +57,11 @@
         "<wait><enter>",
         "<wait><tab><enter>",
         "<wait><enter>",
+        "<wait><enter>",
+        "<wait><end><pageUp><down><down><down><down><down><down> ",
+        "<wait><end> <tab><enter>",
         "<wait><tab><enter>",
+        "<wait><enter>",
         "<wait><enter>",
         "<wait>u<enter>vagrant<tab><tab>20<tab>vagrant<tab><tab>wheel<tab><tab><tab><enter>",
         "<wait>x<enter>",
@@ -76,13 +80,6 @@
     }
   ],
   "provisioners": [
-    {
-      "type": "shell",
-      "execute_command": "{{ .Vars }} sh '{{ .Path }}'",
-      "scripts": [
-        "scripts/freebsd-7.1/sudo.sh"
-      ]
-    },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
