@@ -67,7 +67,18 @@
         "<wait>x<enter>", // exit user and group management menu
         "<wait><enter>", // message before setting root password
         "<wait>password<enter><wait>password<enter>", // input and retype root password
-        "<wait><enter>", // not visiting the general configuration menu
+        "<wait><tab><enter>", // visit the general configuration menu
+        "<wait>f<enter>", // enter Fixit menu
+        "<wait>4<enter>", // choose Shell menu
+        "<wait><pressAlt><f4><releaseAlt>", // press alt+F4 to switch to shell
+        "<wait>echo 'vagrant ALL=(ALL) NOPASSWD:ALL' >> /usr/local/etc/sudoers<enter>", // add vagarnt user to sudoers
+        "<wait>mkdir ~vagrant/.ssh<enter>",
+        "<wait>fetch -o ~vagrant/.ssh/authorized_keys https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub<enter>",
+        "<wait10>chown -R vagrant: ~vagrant/.ssh<enter>",
+        "<wait>chmod 700 ~vagrant/.ssh<enter>",
+        "<wait>chmod 600 ~vagrant/.ssh/authorized_keys<enter>",
+        "<wait><pressAlt><f1><releaseAlt>", // return to installer
+        "<wait>x<enter>", // exit Fixit menu
         "<wait>x", // exit install
         "<wait><tab><enter>" // sure to exit
       ]
