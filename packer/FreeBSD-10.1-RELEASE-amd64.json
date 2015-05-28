@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://ftp3.jp.freebsd.org/pub/FreeBSD/ISO-IMAGES-amd64/10.1/FreeBSD-10.1-RELEASE-amd64-disc1.iso",
+      "iso_url": "http://ftp3.jp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.1/FreeBSD-10.1-RELEASE-amd64-disc1.iso",
       "iso_checksum": "d0d4553080b88653569e1871d57fc819",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
