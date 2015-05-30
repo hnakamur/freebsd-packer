@@ -3,7 +3,10 @@ DISTRIBUTIONS="base.txz kernel.txz lib32.txz"
 
 #!/bin/sh
 echo 'WITHOUT_X11="YES"' >> /etc/make.conf
-echo 'nameserver 8.8.8.8' >> /etc/resolv.conf
+cat >> /etc/resolv.conf <<EOF
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
 cat >> /etc/rc.conf <<EOF
 ifconfig_em0="DHCP"
 sshd_enable="YES"
