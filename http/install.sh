@@ -1,5 +1,5 @@
 PARTITIONS=ada0
-DISTRIBUTIONS="base.txz kernel.txz lib32.txz"
+DISTRIBUTIONS="base.txz kernel.txz"
 
 #!/bin/sh
 echo 'WITHOUT_X11="YES"' >> /etc/make.conf
