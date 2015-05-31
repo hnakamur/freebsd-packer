@@ -26,6 +26,16 @@
           "{{.Name}}",
           "--cpus",
           "2"
+        ],
+        [
+          "storagectl",
+          "{{.Name}}",
+          "--name",
+          "SATA Controller",
+          "--add",
+          "sata",
+          "--controller",
+          "IntelAhci"
         ]
       ],
       "boot_command": [
