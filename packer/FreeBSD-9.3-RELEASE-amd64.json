@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/9.3/FreeBSD-9.3-RELEASE-amd64-disc1.iso",
+      "iso_url": "http://ftp3.jp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/9.3/FreeBSD-9.3-RELEASE-amd64-disc1.iso",
       "iso_checksum": "1fc7f8bace8dc861258af9042c9918d6",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
@@ -13,7 +13,7 @@
       "shutdown_command": "echo 'shutdown -p now' | sudo su -",
       "boot_wait": "10s",
       "http_directory": "http",
-      "disk_size": 20480,
+      "disk_size": 81920,
       "vboxmanage": [
         [
           "modifyvm",
